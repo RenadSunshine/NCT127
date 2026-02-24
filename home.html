@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EventGO - Home</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="brand">
+         <span class="brand-icon">
+         <img src="o1.png" alt="EventGO Logo" class="logo-img"></span>
+        </a>
+
+        <button class="nav-toggle" id="navToggle"
+          aria-label="Open menu" aria-controls="navMenu" aria-expanded="false">☰</button>
+
+        <ul class="nav-menu" id="navMenu">
+          <li><a class="nav-link nav-pill nav-pill--active" href="index.html">Home</a></li>
+          <li><a class="nav-link" href="#events">Event List</a></li>
+          <li><a class="nav-link nav-pill nav-pill--gray" href="login.html">Login</a></li>
+          <li><a class="nav-link nav-pill nav-pill--primary" href="signup.html">Sign Up</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+<!-- Hero Slider -->
+<section class="hero" id="hero">
+  <button class="hero-arrow hero-arrow--left" type="button" aria-label="Previous" id="heroPrev">‹</button>
+  <button class="hero-arrow hero-arrow--right" type="button" aria-label="Next" id="heroNext">›</button>
+
+  <!-- Slides -->
+  <div class="hero-slide hero-slide--active"
+       style="background-image:url('y1.png');"
+       data-tag="ENTERTAINMENT"
+       data-title="Summer Music Festival 2026"
+       data-date="01 JUN 2026 at 18:00"
+       data-place="KSPO DOME, Seoul"></div>
+
+  <div class="hero-slide"
+       style="background-image:url('j1.png');"
+       data-tag="SPORTS"
+       data-title="National Sports Championship"
+       data-date="15 SEP 2026 at 14:00"
+       data-place="Mall of Asia (MOA) Arena, Philippines"></div>
+
+  <div class="hero-slide"
+       style="background-image:url('a1.png');"
+       data-tag="EXHIBITION"
+       data-title="Tech & Innovation Expo"
+       data-date="25 OCT 2026 at 15:00"
+       data-place="SM Entertainment, Seoul"></div>
+
+  <div class="hero-inner">
+    <span class="hero-tag" id="heroTag">ENTERTAINMENT</span>
+    <h1 class="hero-title" id="heroTitle">Summer Music Festival 2026</h1>
+
+    <div class="hero-meta">
+      <span class="meta-item">
+        <span class="icon orange">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2V2h-2v2H9V2H7zm12 8H5v10h14V10z"/></svg>
+        </span>
+        <span id="heroDate">01 JUN 2026 at 18:00</span>
+      </span>
+
+      <span class="meta-item">
+        <span class="icon orange">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
+        </span>
+        <span id="heroPlace">KSPO DOME, Seoul</span>
+      </span>
+    </div>
+
+    <button class="btn btn-primary" type="button" onclick="viewEvents()">View Events</button>
+  </div>
+</section>
+    <!-- Search -->
+    <section class="search-strip">
+      <div class="container">
+        <p class="search-label">Search events by date</p>
+
+        <div class="search-row">
+          <div class="input-with-icon">
+            <input type="date" id="dateSearch" class="input" aria-label="Search by date" />
+            <span class="inside-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M7 2v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2V2h-2v2H9V2H7zm12 8H5v10h14V10z"/></svg>
+            </span>
+          </div>
+
+          <button class="btn btn-primary btn-search" type="button" onclick="searchEvents()">
+            <span class="icon white">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 2a8 8 0 1 0 4.9 14.3l4.4 4.4 1.4-1.4-4.4-4.4A8 8 0 0 0 10 2zm0 2a6 6 0 1 1 0 12A6 6 0 0 1 10 4z"/></svg>
+            </span>
+            Search Events
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about">
+      <div class="container about-inner">
+        <h2>About Us</h2>
+        <p>
+          Your on-stop platform for discovering booking tickets for all of events.
+          From fairs and exhibitions to sports, entertainment, and volunteering, we make it easy to find
+          your next experience.
+        </p>
+      </div>
+    </section>
+
+    <!-- Events -->
+    <section class="events" id="events">
+      <div class="container">
+        <div class="section-head">
+          <h2>Upcoming Events</h2>
+          <a class="view-all" href="#events">View All <span aria-hidden="true">→</span></a>
+        </div>
+
+        <div class="cards">
+          <!-- Card 1 -->
+          <article class="card">
+            <div class="card-img">
+              <img src="y1.png" alt="Summer Music Festival 2026" loading="lazy">
+              <span class="badge badge-ent">Entertainment</span>
+            </div>
+            <div class="card-body">
+              <h3>Summer Music Festival 2026</h3>
+
+              <ul class="card-list">
+                <li><span class="li-icon">
+                  <svg viewBox="0 0 24 24"><path d="M7 2v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2V2h-2v2H9V2H7zm12 8H5v10h14V10z"/></svg>
+                </span>01 JUN 2026</li>
+
+                <li><span class="li-icon">
+                  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 11h5v-2h-4V7h-2v6z"/></svg>
+                </span>18:00</li>
+
+                <li><span class="li-icon">
+                  <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg>
+                </span>KSPO DOME, Seoul</li>
+
+                <li><span class="li-icon">
+                  <svg viewBox="0 0 24 24"><path d="M12 1 3 5v6c0 5 4 10 9 12 5-2 9-7 9-12V5l-9-4zm1 12h2a2 2 0 0 0 0-4h-2V7h3V5h-3V3h-2v2H9v2h2v2H9a2 2 0 0 0 0 4h2v2H8v2h3v2h2v-2h2v-2h-2v-2z"/></svg>
+                </span>$75.00</li>
+              </ul>
+
+              <button class="btn btn-primary btn-card" type="button" onclick="bookEvent('Summer Music Festival 2026')">
+                View Events
+              </button>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="card">
+            <div class="card-img">
+              <img src="j1.png" alt="National Sports Championship" loading="lazy">
+              <span class="badge badge-sport">Sports</span>
+            </div>
+            <div class="card-body">
+              <h3>National Sports Championship</h3>
+              <ul class="card-list">
+                <li><span class="li-icon"><svg viewBox="0 0 24 24"><path d="M7 2v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2V2h-2v2H9V2H7zm12 8H5v10h14V10z"/></svg></span>15 SEP 2026</li>
+                <li><span class="li-icon"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 11h5v-2h-4V7h-2v6z"/></svg></span>14:00</li>
+                <li><span class="li-icon"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg></span>Mall of Asia (MOA) Arena, Philippines</li>
+                <li><span class="li-icon"><svg viewBox="0 0 24 24"><path d="M12 1 3 5v6c0 5 4 10 9 12 5-2 9-7 9-12V5l-9-4zm1 12h2a2 2 0 0 0 0-4h-2V7h3V5h-3V3h-2v2H9v2h2v2H9a2 2 0 0 0 0 4h2v2H8v2h3v2h2v-2h2v-2h-2v-2z"/></svg></span>$50.00</li>
+              </ul>
+
+              <button class="btn btn-primary btn-card" type="button" onclick="bookEvent('National Sports Championship')">
+                View Events
+              </button>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="card">
+            <div class="card-img">
+              <img src="a1.png" alt="Tech & Innovation Expo" loading="lazy">
+              <span class="badge badge-expo">Exhibition</span>
+            </div>
+            <div class="card-body">
+              <h3>Tech & Innovation Expo</h3>
+              <ul class="card-list">
+                <li><span class="li-icon"><svg viewBox="0 0 24 24"><path d="M7 2v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-2V2h-2v2H9V2H7zm12 8H5v10h14V10z"/></svg></span>25 OCT 2026</li>
+                <li><span class="li-icon"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 11h5v-2h-4V7h-2v6z"/></svg></span>15:00</li>
+                <li><span class="li-icon"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></svg></span>SM Entertainment, Seoul</li>
+                <li><span class="li-icon"><svg viewBox="0 0 24 24"><path d="M12 1 3 5v6c0 5 4 10 9 12 5-2 9-7 9-12V5l-9-4zm1 12h2a2 2 0 0 0 0-4h-2V7h3V5h-3V3h-2v2H9v2h2v2H9a2 2 0 0 0 0 4h2v2H8v2h3v2h2v-2h2v-2h-2v-2z"/></svg></span>$30.00</li>
+              </ul>
+
+              <button class="btn btn-primary btn-card" type="button" onclick="bookEvent('Tech & Innovation Expo')">
+                View Events
+              </button>
+            </div>
+          </article>
+        </div>
+
+        <div class="dots" aria-hidden="true">
+          <span class="dot dot-active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="brand-icon">
+          <img src="fo1.png" alt="EventGO Logo" class="logo-img"></span>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <h4>SITE MAPS</h4>
+        <a href="index.html">Home</a>
+        <a href="#events">Events List</a>
+        <a href="login.html">Log In</a>
+        <a href="signup.html">Sign Up</a>
+      </div>
+
+      <div class="footer-contact">
+        <h4>CONTACT US</h4>
+        <p>Support@eventgo.com</p>
+        <p>+966533586392</p>
+
+        <div class="social">
+          <a href="https://www.instagram.com/smtown/" target="_blank" rel="noopener noreferrer" aria-label="Instagram (SMTOWN)">
+            <svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3zm-5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm6-2a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/></svg>
+          </a>
+
+          <a href="https://twitter.com/SMTOWNGLOBAL/" target="_blank" rel="noopener noreferrer" aria-label="X (SMTOWNGLOBAL)">
+            <svg viewBox="0 0 24 24"><path d="M18.9 2H22l-6.8 7.8L23 22h-6.3l-4.9-6.2L6.4 22H3.3l7.3-8.4L1 2h6.4l4.4 5.6L18.9 2zm-1.1 18h1.7L7.4 3.9H5.6L17.8 20z"/></svg>
+          </a>
+
+          <a href="https://www.facebook.com/smtown/" target="_blank" rel="noopener noreferrer" aria-label="Facebook (SMTOWN)">
+            <svg viewBox="0 0 24 24"><path d="M13 22v-8h3l1-4h-4V7.5c0-1 .3-1.5 1.7-1.5H17V2.1c-.4-.1-1.8-.1-3.4-.1C10.8 2 9 3.7 9 6.9V10H6v4h3v8h4z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">© 2026 EventGO. All rights reserved.</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
